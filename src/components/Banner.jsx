@@ -1,5 +1,6 @@
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import Marquee from 'react-fast-marquee';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
@@ -40,7 +41,7 @@ export default function Banner() {
   ];
 
   return (
-    <div className="relative">
+    <div className="relative mb-10">
       <Swiper
         spaceBetween={30}
         centeredSlides={true}
@@ -114,11 +115,11 @@ export default function Banner() {
       {/* Announcement Banner */}
       <div className="bg-blue-600 text-white py-3 px-4 mt-8">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
-          <div className="flex items-center space-x-2">
-            <span className="font-semibold">Latest News:</span>
-            <span>Admissions Open for Academic Year 2024-25</span>
+          <div className="flex items-center space-x-2 w-full">
+            <p className="font-semibold lg:min-w-fit">Latest News:</p>
+            <Marquee>Admissions Open for Academic Year 2024-25</Marquee>
           </div>
-          <button className="text-sm underline hover:text-blue-200 transition-colors">
+          <button className="text-sm lg:min-w-fit underline hover:text-blue-200 transition-colors">
             Learn More
           </button>
         </div>

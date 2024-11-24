@@ -1,129 +1,145 @@
-import React from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
+import React, { useState, useEffect } from 'react';
+import { ChevronRight, GraduationCap, Calendar, Book } from 'lucide-react';
 import Marquee from 'react-fast-marquee';
-import 'swiper/css';
-import 'swiper/css/pagination';
-import 'swiper/css/navigation';
-import { Autoplay, Pagination, Navigation } from 'swiper/modules';
-import { BookOpen, Trophy, Users, Star } from 'lucide-react';
 
-export default function Banner() {
+const HeroSection = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [announcement, setAnnouncement] = useState(
+    'Registration open for admission in classes LKG, UKG and I for the session (2025-26)',
+  );
+
   const slides = [
     {
-      image: 'https://i.ibb.co.com/KLLr3RF/5836.jpg',
-      title: 'Nurturing Excellence',
-      subtitle: "Shaping Tomorrow's Leaders Today",
-      description:
-        'Experience world-class education with state-of-the-art facilities and dedicated faculty.',
+      image: 'https://i.ibb.co.com/WGFLrMQ/2053-R0l-VIE5-JQy-A0-MTUt-NTE-1.jpg',
+      title: "Nurturing Tomorrow's Leaders",
+      description: 'Excellence in Education Since 1995',
     },
     {
-      image: 'https://i.ibb.co.com/Y3DfGyc/6851481.jpg',
-      title: 'Innovation in Learning',
-      subtitle: 'Beyond Traditional Education',
-      description:
-        'Discover our innovative teaching methods and comprehensive curriculum.',
+      image: 'https://i.ibb.co.com/q0ptddB/1849-R0l-VIEp-FTi-A3-MDgt-NTE-1.jpg',
+      title: 'State-of-the-Art Facilities',
+      description: 'Modern Labs, Sports Complex, and Smart Classrooms',
     },
     {
-      image: 'https://i.ibb.co.com/6ykb5G4/2482916.jpg',
+      image:
+        'https://i.ibb.co.com/dgBzHPp/education-line-icon-collection-1.jpg',
       title: 'Holistic Development',
-      subtitle: 'Building Character & Competence',
-      description:
-        'Focus on academic excellence, sports, and extra-curricular activities.',
+      description: 'Academics, Sports, Arts, and More',
     },
   ];
 
-  // Quick stats data
-  const stats = [
-    { icon: BookOpen, value: '30+', label: 'Years of Excellence' },
-    { icon: Trophy, value: '100%', label: 'Board Results' },
-    { icon: Users, value: '5000+', label: 'Happy Students' },
-    { icon: Star, value: '50+', label: 'Awards' },
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % slides.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, []);
+
+  const quickLinks = [
+    {
+      icon: <GraduationCap size={20} />,
+      label: 'Admissions',
+      count: '98% Placement',
+    },
+    { icon: <Calendar size={20} />, label: 'Events', count: '50+ Annual' },
+    { icon: <Book size={20} />, label: 'Programs', count: '25+ Courses' },
   ];
 
   return (
-    <div className="relative mb-10">
-      <Swiper
-        spaceBetween={30}
-        centeredSlides={true}
-        autoplay={{
-          delay: 2500,
-          disableOnInteraction: false,
-        }}
-        pagination={{
-          clickable: true,
-        }}
-        navigation={true}
-        modules={[Autoplay, Pagination, Navigation]}
-        className="mySwiper"
-      >
-        {slides.map((slide, index) => (
-          <SwiperSlide key={index}>
-            <div className="relative h-screen max-h-[800px] mt-20">
-              <img
-                src={slide.image}
-                alt={slide.title}
-                className="w-full h-full object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/30">
-                <div className="max-w-7xl mx-auto px-4 h-full flex items-center">
-                  <div className="max-w-2xl text-white">
-                    <h2 className="text-5xl font-bold mb-4">{slide.title}</h2>
-                    <h3 className="text-2xl text-blue-400 mb-6">
-                      {slide.subtitle}
-                    </h3>
-                    <p className="text-lg mb-8">{slide.description}</p>
-                    <div className="flex space-x-4">
-                      <button className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
-                        Apply Now
-                      </button>
-                      <button className="px-6 py-3 border-2 border-white text-white rounded-lg hover:bg-white hover:text-blue-600 transition-colors">
-                        Virtual Tour
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </SwiperSlide>
-        ))}
-      </Swiper>
-
-      {/* Quick Stats Section */}
-      <div className="relative -mt-14 z-10 max-w-7xl mx-auto px-4">
-        <div className="bg-white rounded-xl shadow-xl p-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {stats.map((stat, index) => {
-              const IconComponent = stat.icon;
-              return (
-                <div key={index} className="flex items-center space-x-4">
-                  <div className="p-3 bg-blue-100 rounded-lg">
-                    <IconComponent className="w-6 h-6 text-blue-600" />
-                  </div>
-                  <div>
-                    <div className="text-2xl font-bold text-gray-900">
-                      {stat.value}
-                    </div>
-                    <div className="text-sm text-gray-600">{stat.label}</div>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-        </div>
+    <div className="relative mt-20">
+      {/* Announcement Banner */}
+      <div className="bg-blue-600 text-white px-4 py-2 text-center">
+        <Marquee>
+          <p className="text-sm font-medium">{announcement}</p>
+        </Marquee>
       </div>
 
-      {/* Announcement Banner */}
-      <div className="bg-blue-600 text-white py-3 px-4 mt-8">
-        <div className="max-w-7xl mx-auto flex justify-between items-center">
-          <div className="flex items-center space-x-2 w-full">
-            <p className="font-semibold lg:min-w-fit">Latest News:</p>
-            <Marquee>Admissions Open for Academic Year 2024-25</Marquee>
+      {/* Hero Content */}
+      <div className="relative h-[600px] overflow-hidden">
+        {/* Background Slideshow */}
+        <div
+          className="absolute inset-0 transition-transform duration-700 ease-in-out"
+          style={{
+            transform: `translateX(-${currentSlide * 100}%)`,
+          }}
+        >
+          <div className="flex h-full">
+            {slides.map((slide, index) => (
+              <div key={index} className="relative min-w-full">
+                <img
+                  src={slide.image}
+                  alt={slide.title}
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-black bg-opacity-40" />
+              </div>
+            ))}
           </div>
-          <button className="text-sm lg:min-w-fit underline hover:text-blue-200 transition-colors">
-            Learn More
-          </button>
+        </div>
+
+        {/* Content Overlay */}
+        <div className="relative h-full max-w-6xl mx-auto px-4">
+          <div className="flex flex-col justify-center h-full text-white">
+            {/* School Logo */}
+            <div className="mb-8">
+              <img
+                src="https://i.ibb.co.com/Wv3Jc3C/letter-v.png"
+                alt="School Logo"
+                className="w-24 h-24"
+              />
+            </div>
+
+            {/* Hero Text */}
+            <h1 className="text-5xl font-bold mb-4 transition-opacity duration-500">
+              {slides[currentSlide].title}
+            </h1>
+            <p className="text-xl mb-8 max-w-2xl transition-opacity duration-500">
+              {slides[currentSlide].description}
+            </p>
+
+            {/* CTA Buttons */}
+            <div className="flex gap-4 mb-12">
+              <button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition-colors flex items-center">
+                Apply Now
+                <ChevronRight size={20} className="ml-2" />
+              </button>
+              <button className="bg-white hover:bg-gray-100 text-blue-600 px-6 py-3 rounded-lg font-medium transition-colors">
+                Virtual Tour
+              </button>
+            </div>
+
+            {/* Quick Stats */}
+            <div className="grid grid-cols-3 gap-6 max-w-3xl">
+              {quickLinks.map((link, index) => (
+                <div
+                  key={index}
+                  className="bg-white bg-opacity-10 backdrop-blur-sm rounded-lg p-4 hover:bg-opacity-20 transition-all cursor-pointer"
+                >
+                  <div className="flex items-center mb-2">
+                    {link.icon}
+                    <span className="ml-2 font-medium">{link.label}</span>
+                  </div>
+                  <p className="text-sm opacity-90">{link.count}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Slide Indicators */}
+        <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex gap-2">
+          {slides.map((_, index) => (
+            <button
+              key={index}
+              className={`w-2 h-2 rounded-full transition-all ${
+                currentSlide === index ? 'bg-white w-6' : 'bg-white/50'
+              }`}
+              onClick={() => setCurrentSlide(index)}
+            />
+          ))}
         </div>
       </div>
     </div>
   );
-}
+};
+
+export default HeroSection;

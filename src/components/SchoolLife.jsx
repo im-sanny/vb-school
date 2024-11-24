@@ -157,7 +157,7 @@ const SchoolLife = () => {
         </div>
 
         {/* Testimonials */}
-        <div className="bg-white rounded-lg shadow-lg p-8 mb-8">
+        <div className="bg-white rounded-lg shadow-lg p-8">
           <h3 className="text-2xl font-bold text-gray-800 mb-8 text-center">
             Student & Parent Testimonials
           </h3>

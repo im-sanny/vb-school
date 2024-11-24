@@ -1,6 +1,7 @@
 import Academy from '../components/Academy';
 import Banner from '../components/Banner';
 import Choose from '../components/Choose';
+import Contact from '../components/Contact';
 import Facilities from '../components/Facilities';
 import NewsAndEvents from '../components/NewsAndEvent';
 import QuickStats from '../components/QuickStats';
@@ -13,9 +14,10 @@ export default function Home() {
       <Choose />
       <Academy />
       <SchoolLife />
+      <Facilities />
       <NewsAndEvents />
       {/* <QuickStats /> */}
-      <Facilities />
+      <Contact />
     </div>
   );
 }

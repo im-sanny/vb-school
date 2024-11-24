@@ -1,4 +1,3 @@
-import React from 'react';
 import { HomeIcon, Search, ArrowLeft, BookOpen, Phone } from 'lucide-react';
 
 const ErrorPage = ({ errorCode = 404, errorMessage = 'Page Not Found' }) => {

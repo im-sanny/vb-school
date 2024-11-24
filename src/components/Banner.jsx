@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { ChevronRight, GraduationCap, Calendar, Book } from 'lucide-react';
 import Marquee from 'react-fast-marquee';
 
 const HeroSection = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [announcement, setAnnouncement] = useState(
-    'Registration open for admission in classes LKG, UKG and I for the session (2025-26)',
+    'Registration open for admission in classes LKG, UKG and I for the session (2025-26)'
   );
 
   const slides = [

@@ -38,7 +38,7 @@ A modern, responsive website for Vishal Bharti School built with React and Tailw
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/vishal-bharti-school.git
+git clone https://github.com/im-sanny/vb-school.git
 ```
 
 2. Install dependencies:
@@ -61,7 +61,7 @@ npm run build
 
 ### Development
 - Run `npm run dev` for development environment
-- Access the site at `http://localhost:3000`
+- Access the site at `http://http://localhost:5173/`
 - Make changes in `src` directory
 - Changes will hot-reload in the browser
 

@@ -1,6 +1,5 @@
 {
   "name": "client",
-  "homepage": "https://im-sanny.github.io/vb-school/",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -8,21 +7,14 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview",
-    "predeploy":"npm run build",
-    "deploy": "gh-pages -d dist"
-
+    "preview": "vite preview"
   },
   "dependencies": {
-    "axios": "^1.7.7",
-    "date-fns": "^4.1.0",
     "firebase": "^11.0.1",
-    "gh-pages": "^6.2.0",
     "lucide-react": "^0.460.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-fast-marquee": "^1.6.5",
-    "react-hot-toast": "^2.4.1",
     "react-router-dom": "^6.28.0",
     "swiper": "^11.1.14"
   },

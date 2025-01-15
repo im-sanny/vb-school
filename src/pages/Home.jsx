@@ -4,7 +4,6 @@ import Choose from '../components/Choose';
 import Contact from '../components/Contact';
 import Facilities from '../components/Facilities';
 import NewsAndEvents from '../components/NewsAndEvent';
-import QuickStats from '../components/QuickStats';
 import SchoolLife from '../components/SchoolLife';
 
 export default function Home() {

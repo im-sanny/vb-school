@@ -1,4 +1,4 @@
-import { HomeIcon, Search, ArrowLeft, BookOpen, Phone } from 'lucide-react';
+import { ArrowLeft, BookOpen, HomeIcon, Phone, Search } from 'lucide-react';
 
 const ErrorPage = ({ errorCode = 404, errorMessage = 'Page Not Found' }) => {
   const suggestions = [

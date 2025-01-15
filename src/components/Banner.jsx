@@ -1,5 +1,5 @@
-import { useState, useEffect } from 'react';
-import { ChevronRight, GraduationCap, Calendar, Book } from 'lucide-react';
+import { Book, Calendar, ChevronRight, GraduationCap } from 'lucide-react';
+import { useEffect, useState } from 'react';
 import Marquee from 'react-fast-marquee';
 
 const HeroSection = () => {

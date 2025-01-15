@@ -1,13 +1,13 @@
 import {
   BookOpen,
-  Users,
-  Trophy,
+  Brain,
+  GraduationCap,
   Microscope,
   Palette,
-  Brain,
   Shield,
-  GraduationCap,
   TreeDeciduous,
+  Trophy,
+  Users,
 } from 'lucide-react';
 
 const Choose = () => {

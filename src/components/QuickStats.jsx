@@ -1,12 +1,12 @@
-import { useState, useEffect, useRef } from 'react';
 import {
-  GraduationCap,
-  Users,
-  Trophy,
   Award,
   BookOpen,
+  GraduationCap,
   Medal,
+  Trophy,
+  Users,
 } from 'lucide-react';
+import { useEffect, useRef, useState } from 'react';
 
 const Counter = ({ end, duration = 2000, prefix = '', suffix = '' }) => {
   const [count, setCount] = useState(0);

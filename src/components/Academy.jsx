@@ -1,12 +1,12 @@
-import { useState } from 'react';
 import {
   BookOpen,
-  Users,
   FlaskConical,
-  Trophy,
-  Pencil,
   GraduationCap,
+  Pencil,
+  Trophy,
+  Users,
 } from 'lucide-react';
+import { useState } from 'react';
 
 const Academy = () => {
   const [activeTab, setActiveTab] = useState('primary');

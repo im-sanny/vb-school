@@ -1,14 +1,12 @@
-import { useState } from 'react';
 import {
   Calendar,
+  ChevronRight,
   Clock,
   MapPin,
-  ChevronRight,
-  Trophy,
   Newspaper,
-  Calendar as CalendarIcon,
-  Star,
+  Trophy,
 } from 'lucide-react';
+import { useState } from 'react';
 
 const NewsAndEvents = () => {
   const [activeTab, setActiveTab] = useState('news');

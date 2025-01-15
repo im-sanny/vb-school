@@ -1,13 +1,12 @@
-import { useState } from 'react';
 import {
-  Presentation,
-  Trophy,
-  Music,
   FlaskConical,
+  Music,
+  Presentation,
   Star,
-  Play,
+  Trophy,
   X,
 } from 'lucide-react';
+import { useState } from 'react';
 
 const SchoolLife = () => {
   const [selectedImage, setSelectedImage] = useState();

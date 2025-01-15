@@ -1,18 +1,13 @@
-import { useState } from 'react';
 import {
-  Monitor,
-  Trophy,
   Book,
-  FlaskConical,
   Bus,
-  Shield,
   ChevronRight,
-  Users,
-  Camera,
-  Music,
-  Laptop,
-  Wifi,
+  FlaskConical,
+  Monitor,
+  Shield,
+  Trophy,
 } from 'lucide-react';
+import { useState } from 'react';
 
 const Facilities = () => {
   const [selectedFacility, setSelectedFacility] = useState(null);
